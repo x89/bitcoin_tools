@@ -42,5 +42,7 @@ while(1):
         zero_time += 1
         sleep(1)
     except KeyboardInterrupt:
-        print(bitcoin_ips)
+        with open('bitcoin_ips', 'a') as f:
+            for ip in bitcoin_ips:
+                f.write("{ip}\n".format(ip=ip))
         sys.exit()
